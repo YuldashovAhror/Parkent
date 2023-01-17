@@ -2,7 +2,7 @@
 
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="index.html" class="logo logo-dark">
+        <a href="/dashboard" class="logo logo-dark">
             <span class="logo-sm">
                 <img src="@include('components.dashboard.logo')" alt="" height="22">
             </span>
@@ -24,9 +24,9 @@
             <ul class="metismenu list-unstyled mt-4" id="side-menu">
                 <li class="menu-title">Menu</li>
                 <li>
-                    <a href="/dashboard">
+                    <a href="{{route('dashboard.header.index')}}">
                         <i class="uil-star"></i>
-                        <span>Test</span>
+                        <span>Заголовок</span>
                     </a>
                 </li>
                 <li>
@@ -36,13 +36,8 @@
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
                         <li><a href="ecommerce-products.html">Products</a></li>
-                        <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                        <li><a href="ecommerce-orders.html">Orders</a></li>
-                        <li><a href="ecommerce-customers.html">Customers</a></li>
-                        <li><a href="ecommerce-cart.html">Cart</a></li>
-                        <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                        <li><a href="ecommerce-shops.html">Shops</a></li>
-                        <li><a href="ecommerce-add-product.html">Add Product</a></li>
+                        <li><a href="ecommerce-products.html">Products</a></li>
+                        
                     </ul>
                 </li>
             </ul>

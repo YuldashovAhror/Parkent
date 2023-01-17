@@ -343,7 +343,7 @@
                             <h3 class="flat__plan general-B"></h3>
                             <label for="flat__block" class="flat__block">
                                 <select name="" id="flat__block">
-                                    <option value="" >Блок</option>
+                                    <option value="" >Здание </option>
                                 </select>
                                 <!-- /# -->
                             </label>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\HeaderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::group(['prefix'=>'dashboard'], function (){
+    Route::name('dashboard.')->group(function (){   
+        Route::resource('/header', HeaderController::class);
+        // Route::resource('/brend', HeaderController::class);
+
+    });
+});
 
 require __DIR__.'/auth.php';
