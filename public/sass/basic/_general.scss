@@ -1,0 +1,36 @@
+*, ::after, ::before {
+  box-sizing: border-box!important;
+}
+.general {
+    &__container {
+        padding: 0 8.5rem;
+    }
+    &__top {
+
+    }
+    &__title {
+    }
+    &__subtitle {
+    }
+    &-R {
+        font-family: "GothamPro";
+    }
+    &-M {
+        font-family: "GothamPro-M";
+    }
+    &-B {
+        font-family: "GothamPro-B";
+    }
+}
+@media (max-width: 900.98px) {
+    .general {
+        &__container {
+            padding: 0 2.4rem;
+        }
+        &__top {
+
+        }
+        &__title {
+        }
+    }
+}

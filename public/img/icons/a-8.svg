@@ -1,0 +1,9 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26 39H6.5V30.3333C6.5 29.1367 7.47005 28.1667 8.66667 28.1667H23.8333C25.03 28.1667 26 29.1367 26 30.3333V39Z" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23.8333 39V45.5" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.66665 45.5V39" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.33331 39.0003H28.1666" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.33331 45.5003H47.6666" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="40.0834" cy="20.5833" rx="8.66667" ry="14.0833" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M40.0833 21.667V45.5003" stroke="#61C967" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

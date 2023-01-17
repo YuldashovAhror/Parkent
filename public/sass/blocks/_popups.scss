@@ -1,0 +1,277 @@
+.popup {
+    &__back {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 99;
+        display: none;
+    }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 24.6rem;
+    background-color: #F8F8F8;
+    z-index: 100;
+    padding: 3rem 2.1rem;
+    display: none;
+    border-radius: 1rem;
+    .close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        display: block;
+        cursor: pointer;
+        svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            path,circle {
+                transition: .3s all;
+            }
+        }
+        &:hover {
+            svg {
+                circle {
+                    fill: var(--main-color-green);
+                }
+                path {
+                    stroke: var(--main-color-white);
+                }
+            }
+        }
+    }
+    &__container {
+        .title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--main-color-black);
+            text-transform: uppercase;
+            margin-bottom: .8rem;
+        }
+        .text {
+            text-align: center;
+            color: var(--main-color-black);
+            font-size: .8rem;
+            line-height: 170%;
+            width: 100%;
+        }
+    }
+    //==========POPUP SUCCESS=============
+    &__success {
+        text-align: center;
+        svg {
+            display: block;
+            width: 100%;
+            max-width: 4rem;
+            margin: 0 auto;
+            height: auto;
+            margin-bottom: 1.8rem;
+        }
+        .title {
+            color: var(--main-color-black);
+            font-size: 1.8rem;
+            line-height: 110%;
+            margin-bottom: 1rem;
+        }
+        .subtitle {
+            color: var(--main-color-black);
+            line-height: 100%;
+            font-size: .8rem;
+            padding: 0 2rem;
+            margin-bottom: 1.5rem;
+        }
+        button {
+            @include flexCenter();
+            width: 80%;
+            margin: 0 auto;
+            background-color: var(--main-color-green);
+            color: var(--main-color-white);
+            padding: 1.1rem;
+            border: none;
+            border-radius: .8rem;
+        }
+    }
+    //==========POPUP SUCCESS=============
+    &__form {
+        .form {
+            &__box {
+                display: block;
+                width: 100%;
+                position: relative;
+                margin-bottom: .6rem;
+                input {
+                    display: block;
+                    width: 100%;
+                    border: none;
+                    background-color: var(--main-color-white);
+                    font-size: .7rem;
+                    padding: 1rem 1.2rem;
+                    border-radius: 1rem;
+                }
+            }
+            &__btn {
+                @include flexCenter();
+                width: 100%;
+                background-color: var(--main-color-green);
+                border: none;
+                color: var(--main-color-white);
+                padding: .8rem;
+                font-size: .8rem;
+                margin-bottom: 1.3rem;
+                border-radius: 1.4rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+    //==========POPUP NEWS=============
+    &__news {
+        display: none;
+        z-index: 100;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 50%;
+        height: 100%;
+        max-height: 93vh;
+        background-color: #F8F8F8;
+        border-radius: 1rem;
+        padding: 3.5rem 2.5rem;
+        .close {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            display: block;
+            cursor: pointer;
+            svg {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                path,circle {
+                    transition: .3s all;
+                }
+            }
+            &:hover {
+                svg {
+                    circle {
+                        fill: var(--main-color-green);
+                    }
+                    path {
+                        stroke: var(--main-color-white);
+                    }
+                }
+            }
+        }
+        &-container {
+            position: relative;
+            height: 100%;
+            overflow-y: auto;
+        }
+        &-title {
+            font-size: 2.4rem;
+            line-height: 150%;
+            margin-bottom: 1.5rem;
+        }
+        &-img {
+            display: block;
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            object-fit: cover;
+            margin-bottom: 3.2rem;
+        }
+        &-desc {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 900.98px) {
+    .popup {
+        &__btn {
+            display: none;
+        }
+        top: unset;
+        left: 0;
+        bottom: 0;
+        transform: unset;
+        max-width: 100%;
+        padding: 4.2rem 2.4rem;
+        padding-top: 7.6rem;
+        .close {
+            top: -3.5rem;
+            right: 1rem;
+            width: 100%;
+            max-width: 2.5rem;
+            svg {
+                width: 100%;
+            }
+        }
+        &__container {
+            height: 100%;
+            overflow-y: auto;
+            .title {
+                font-size: 3.2rem;
+                margin-bottom: 1.6rem;
+            }
+            .subtitle {
+                font-size: 1.6rem;
+                margin-bottom: 3.2rem;
+            }
+            .text {
+                font-size: 1.4rem;
+            }
+        }
+        &__success {
+            svg {
+                max-width: 8rem;
+                margin-bottom: 3.6rem;
+            }
+            .title {
+                font-size: 3.2rem;
+                margin-bottom: 2rem;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+            button {
+                padding: 2.1rem;
+                font-size: 1.8rem;
+            }
+        }
+        &__form {
+            .form {
+                &__box {
+                    margin-bottom: 2.4rem;
+                    span {
+                        font-size: 1.1rem;
+                        top: 1.8rem;
+                        left: 2.4rem;
+                    }
+                    input {
+                        font-size: 1rem;
+                        padding: 1.4rem 1.7rem;
+                    }
+                }
+                &__btn {
+                    padding: 1.4rem;
+                    font-size: .9rem;
+                    margin-bottom: 6.2rem;
+                    border-radius: 2.2rem;
+                }
+            }
+        }
+        &__news {
+            max-width: 100%;
+            top: 60%;
+        }
+    }
+}
