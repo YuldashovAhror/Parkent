@@ -70,6 +70,18 @@
                         <span>О компании</span>
                     </a>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Баннеры</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.banner.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.banner.create')}}">Создать</a></li>
+                        
+                    </ul>
+                    
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

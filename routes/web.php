@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\AboutController;
+use App\Http\Controllers\Dashboard\BannerController;
 use App\Http\Controllers\Dashboard\HeaderController;
 use App\Http\Controllers\Dashboard\NewsController;
 use App\Http\Controllers\Dashboard\SecondAboutController;
@@ -29,7 +30,7 @@ Route::group(['prefix'=>'dashboard'], function (){
         Route::resource('/secondbanner', SecondBannerController::class);
         Route::resource('/secondabout', SecondAboutController::class);
         Route::resource('/about', AboutController::class);
-        Route::resource('/banner', AboutController::class);
+        Route::resource('/banner', BannerController::class);
 
     });
 });
