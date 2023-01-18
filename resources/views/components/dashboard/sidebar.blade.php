@@ -50,6 +50,19 @@
                         <li><a href="{{route('dashboard.secondbanner.create')}}">Создать</a></li>
                         
                     </ul>
+                    
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>О данных</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.secondabout.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.secondabout.create')}}">Создать</a></li>
+                        
+                    </ul>
+                    
                 </li>
             </ul>
         </div>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\HeaderController;
 use App\Http\Controllers\Dashboard\NewsController;
+use App\Http\Controllers\Dashboard\SecondAboutController;
 use App\Http\Controllers\Dashboard\SecondBannerController;
 use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::group(['prefix'=>'dashboard'], function (){
         Route::resource('/header', HeaderController::class);
         Route::resource('/news', NewsController::class);
         Route::resource('/secondbanner', SecondBannerController::class);
+        Route::resource('/secondabout', SecondAboutController::class);
 
     });
 });
