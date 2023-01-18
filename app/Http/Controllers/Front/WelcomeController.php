@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Header;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -16,8 +17,10 @@ class WelcomeController extends Controller
     public function index()
     {
         $header = Header::find(1);
+        $news = News::all();
         return view('welcome', [
-            'header'=>$header
+            'header'=>$header,
+            'news'=>$news,
         ]);
     }
 

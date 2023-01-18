@@ -556,21 +556,18 @@
                 <!-- /.news__top -->
                 <div class="swiper news__slider" data-aos="fade-up" data-aos-delay="400">
                     <div class="swiper-wrapper">
-                        <?php for ($i = 1; $i < 5; $i++):?>
+                        @foreach ($news as $new)
                             <div class="swiper-slide">
                                 <div class="news__item">
                                     <div class="news__pic">
-                                        <img src="<?php echo '/img/news/'.$i.'.jpg'; ?>" alt="">
+                                        <img src="{{$new->photo}}" alt="">
                                     </div>
                                     <!-- /.news__pic -->
                                     <div class="news__item-content">
-                                        <h4 class="news__title general-M">Победитель в номинации бренд года 2021</h4>
+                                        <h4 class="news__title general-M">{{$new->name_uz}}</h4>
                                         <!-- /.news__title -->
                                         <div class="news__description general-R">
-                                            Победитель в номинации бренд года 2021 . . .
-                                            Победитель в номинации бренд года 2021 . . .
-                                            Победитель в номинации бренд года 2021 . . .
-                                            Победитель в номинации бренд года 2021 . . .
+                                            {!!$new->discription_uz!!}
                                         </div>
                                         <!-- /.news__description -->
                                         <a href="#" class="news__more">
@@ -585,7 +582,7 @@
                                 </div>
                                 <!-- /.news__item -->
                             </div>
-                        <?php endfor ?>
+                            @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
