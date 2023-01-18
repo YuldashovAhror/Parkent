@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\HeaderController;
+use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,5 +25,9 @@ Route::group(['prefix'=>'dashboard'], function (){
 
     });
 });
+
+
+///// Front Routes //////
+Route::resource('/', WelcomeController::class);
 
 require __DIR__.'/auth.php';
