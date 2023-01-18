@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Header;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class HeaderController extends Controller
+class HeaderController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,10 @@ class HeaderController extends Controller
      */
     public function index()
     {
-        return view('dashboard.header.index');
+        $header = Header::find(1);
+        return view('dashboard.header.index', [
+            'header'=>$header
+        ]);
     }
 
     /**
@@ -69,7 +74,20 @@ class HeaderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $header = Header::find($id);
+        $header->percent = $request->percent;
+        $header->build_day = $request->build_day;
+        $header->pdf_size = $request->pdf_size;
+        if(!empty($request->file('pdf'))){
+            if(is_file(public_path($header->pdf))){
+                unlink(public_path($header->pdf));
+            }
+            $img_name = Str::random(10).'.'.$request->file('pdf')->getClientOriginalExtension();
+            $request->file('pdf')->move(public_path('/image/header'), $img_name);
+            $header->pdf = '/image/header/'.$img_name;
+        }
+        $header->save();
+        return redirect()->route('dashboard.header.index');
     }
 
     /**
