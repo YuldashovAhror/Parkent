@@ -64,6 +64,12 @@
                     </ul>
                     
                 </li>
+                <li>
+                    <a href="{{route('dashboard.about.index')}}">
+                        <i class="uil-star"></i>
+                        <span>О компании</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
