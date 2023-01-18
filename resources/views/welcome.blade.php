@@ -470,24 +470,23 @@
                 <div class="info">
                     <div class="swiper-container info__slider">
                         <div class="swiper-wrapper">
-                            <?php for ($i = 1; $i < 5; $i++):?>
+                            @foreach ($secondbanner as $second)
                                 <div class="swiper-slide">
                                     <div class="info__slider-frame" data-swiper-parallax-opacity="0">
                                         <div class="info__slider-photo" data-swiper-parallax="-100" data-swiper-parallax-scale="1.2">
-                                            <img src="/img/info/1.jpg" alt="photo">
+                                            <img src="{{$second->photo}}" alt="photo">
                                         </div>
                                         <div class="info__slider-caption" data-swiper-parallax="0" data-swiper-parallax-opacity="0">
                                             <div class="info__slider-description" data-swiper-parallax="200">
-                                                <h2 class="info__title general-B">Дизайн и материалы</h2>
+                                                <h2 class="info__title general-B">{{$second->title_uz}}</h2>
                                                 <!-- /.info__title -->
-                                                <div class="info__descr general-R">Качество и изысканность отделки общедоступных пространств — от лобби до паркинга — соответствует самым требовательным мировым стандартам супер-люксовых гостиниц и особняков. Дизайн, разработанный английским бюро United Design Partnership, это история о роскоши, реализованная через уникальные материалы, превосходный вкус и функциональное планирование.</div>
+                                                <div class="info__descr general-R">{!!$second->discription_uz!!}</div>
                                                 <!-- /.info__descr -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <?php endfor ?>
-                            
+                            @endforeach
                         </div>
                     </div>
                     {{-- @dd($header) --}}

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.main')
 @section('content')
 <div class="col-sm-6" style="padding-top: 2rem; padding-bottom: 1.5rem">
-    <h3>События и семинары</h3>
+    <h3>Второй слайдер</h3>
 </div>
     <div class="row">
         <div class="col-sm-12">
