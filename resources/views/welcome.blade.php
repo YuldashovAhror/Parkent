@@ -487,11 +487,12 @@
                                     </div>
                                 </div>
                             <?php endfor ?>
+                            
                         </div>
                     </div>
                     {{-- @dd($header) --}}
                     <div class="info__bottom">
-                        <a href="" class="checking general-M">Выбрать квартиру</a>
+                        <a href="" class="checking general-M popup__btn">Выбрать квартиру</a>
                         <!-- /.checking -->
                         <a href="{{$header->pdf}}" download="" class="download d__desc">
                             <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -566,6 +567,9 @@
                                         <h4 class="news__title general-M">Победитель в номинации бренд года 2021</h4>
                                         <!-- /.news__title -->
                                         <div class="news__description general-R">
+                                            Победитель в номинации бренд года 2021 . . .
+                                            Победитель в номинации бренд года 2021 . . .
+                                            Победитель в номинации бренд года 2021 . . .
                                             Победитель в номинации бренд года 2021 . . .
                                         </div>
                                         <!-- /.news__description -->

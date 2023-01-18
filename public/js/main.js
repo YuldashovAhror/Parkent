@@ -54,21 +54,21 @@ $(window).on('load', function () {
         }, 250)
     });
 
-    $('.news__item-content .news__more').click(function (event) {
-        event.preventDefault();
-        let newsSrc = $(this).parent().parent().children().find('img').attr('src');
-        let newsTitle = $(this).parent().find('.news__title').html();
-        let newsDesc = $(this).parent().find('.news__description').html();
+    // $('.news__item-content .news__more').click(function (event) {
+    //     event.preventDefault();
+    //     let newsSrc = $(this).parent().parent().children().find('img').attr('src');
+    //     let newsTitle = $(this).parent().find('.news__title').html();
+    //     let newsDesc = $(this).parent().find('.news__description').html();
 
-        $('.popup__news-title').html(newsTitle);
-        $('.popup__news-img').attr('src', newsSrc);
-        $('.popup__news-desc').html(newsDesc);
+    //     $('.popup__news-title').html(newsTitle);
+    //     $('.popup__news-img').attr('src', newsSrc);
+    //     $('.popup__news-desc').html(newsDesc);
 
-        $('.popup__back').slideDown('200')
-        setTimeout(()=> {
-            $('.popup__news').fadeIn('200');
-        }, 250)
-    })
+    //     $('.popup__back').slideDown('200')
+    //     setTimeout(()=> {
+    //         $('.popup__news').fadeIn('200');
+    //     }, 250)
+    // })
 
     $('.popup__close').click(()=> {
         $('.popup').fadeOut('200');

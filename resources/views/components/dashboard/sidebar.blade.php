@@ -32,11 +32,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-star"></i>
-                        <span>Dropdown</span>
+                        <span>Новости</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="ecommerce-products.html">Products</a></li>
-                        <li><a href="ecommerce-products.html">Products</a></li>
+                        <li><a href="{{route('dashboard.news.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.news.create')}}">Создать</a></li>
                         
                     </ul>
                 </li>
