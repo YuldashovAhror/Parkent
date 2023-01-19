@@ -110,18 +110,18 @@ class BannerController extends BaseController
             }
             $banner['photo_day'] = $this->photoSave($request->file('photo_day'), 'image/banner');
         }
-            $banner->title_uz = $request->title_uz;
-            $banner->title_ru = $request->title_ru;
-            $banner->title_en = $request->title_en;
-            $banner->discription_uz = $request->discription_uz;
-            $banner->discription_ru = $request->discription_ru;
-            $banner->discription_en = $request->discription_en;
-            $banner->title2_uz = $request->title2_uz;
-            $banner->title2_ru = $request->title2_ru;
-            $banner->title2_en = $request->title2_en;
-            if($request->file('photo_night')){
-                if(is_file(public_path($banner->photo_night))){
-                    unlink(public_path($banner->photo_night));
+        $banner->title_uz = $request->title_uz;
+        $banner->title_ru = $request->title_ru;
+        $banner->title_en = $request->title_en;
+        $banner->discription_uz = $request->discription_uz;
+        $banner->discription_ru = $request->discription_ru;
+        $banner->discription_en = $request->discription_en;
+        $banner->title2_uz = $request->title2_uz;
+        $banner->title2_ru = $request->title2_ru;
+        $banner->title2_en = $request->title2_en;
+        if($request->file('photo_night')){
+            if(is_file(public_path($banner->photo_night))){
+                unlink(public_path($banner->photo_night));
             }
             $banner['photo_night'] = $this->photoSave($request->file('photo_night'), 'image/banner');
         }

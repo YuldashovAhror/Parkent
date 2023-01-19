@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Header;
 use App\Models\News;
 use App\Models\SecondBanner;
@@ -20,10 +21,12 @@ class WelcomeController extends Controller
         $header = Header::find(1);
         $news = News::all();
         $secondbanner = SecondBanner::all();
+        $banners = Banner::all();
         return view('welcome', [
             'header'=>$header,
             'news'=>$news,
             'secondbanner'=>$secondbanner,
+            'banners'=>$banners,
         ]);
     }
 
