@@ -32,7 +32,7 @@
                                     <div class="main__slider-caption general__container" data-swiper-parallax="0" data-swiper-parallax-opacity="0">
                                         <div class="main__slider-title general__regular" data-swiper-parallax-y="-200" data-swiper-parallax-scale=".8">
                                             <h1 class="main__title general-B">
-                                                {{$banner->title_uz}}
+                                                {!!$banner->title_uz!!}
                                                 {{-- ЖИЗНЬ В УНИКАЛЬНОМ <span>РАЙОНЕ</span> В <span>ОКРУЖЕНИИ</span> ПРИРОДЫ --}}
                                             </h1>
                                             <!-- /.main__title -->

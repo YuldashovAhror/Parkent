@@ -20,20 +20,22 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <label class="form-label" for="title_uz">Название Uz</label>
-                    <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$banner->title_uz}}">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label" for="title_ru">Название Ru</label>
-                    <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$banner->title_ru}}">
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label" for="title_en">Название En</label>
-                    <div class="input-group">
-                        <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$banner->title_en}}">
+                    <label for="title_uz" class="form-label">Описание Uz</label>
+                    <div class="form-group">
+                        <textarea class="ckeditor form-control" name="title_uz" required>{{$banner->title_uz}}</textarea>
                     </div>
                 </div>
-            </div> 
+                <div class="col-md-4">
+                    <label class="form-label" for="title_ru">Описание Ru</label>
+                    <textarea class="ckeditor form-control" name="title_ru" required>{{$banner->title_ru}}</textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label" for="title_en">Описание En</label>
+                    <div class="input-group">
+                        <textarea class="ckeditor form-control" name="title_en" required>{{$banner->title_en}}</textarea>
+                    </div>
+                </div>
+            </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <label for="discription_uz" class="form-label">Описание Uz</label>

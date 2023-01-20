@@ -18,20 +18,22 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <label class="form-label" for="title_uz">Название Uz</label>
-                    <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" min="2000" max="2099" value="">
+                    <label for="title_uz" class="form-label">Название Uz</label>
+                    <div class="form-group">
+                        <textarea class="ckeditor form-control" name="title_uz" required></textarea>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="title_ru">Название Ru</label>
-                    <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="">
+                    <textarea class="ckeditor form-control" name="title_ru" required></textarea>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label class="form-label" for="title_en">Название En</label>
                     <div class="input-group">
-                        <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
+                        <textarea class="ckeditor form-control" name="title_en" required></textarea>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <label for="discription_uz" class="form-label">Описание Uz</label>
@@ -52,15 +54,15 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <label class="form-label" for="title2_uz">Название Uz</label>
+                    <label class="form-label" for="title2_uz">Название2 Uz</label>
                     <input class="form-control" name="title2_uz" id="title2_uz" type="text" placeholder="..." required="" min="2000" max="2099" value="">
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="title2_ru">Название Ru</label>
+                    <label class="form-label" for="title2_ru">Название2 Ru</label>
                     <input class="form-control" name="title2_ru" id="title2_ru" type="text" placeholder="..." required="" value="">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label class="form-label" for="title2_en">Название En</label>
+                    <label class="form-label" for="title2_en">Название2 En</label>
                     <div class="input-group">
                         <input class="form-control" name="title2_en" id="title2_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
                     </div>
