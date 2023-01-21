@@ -9,17 +9,11 @@ class Project extends Model
 {
     use HasFactory;
 
-    // protected $guarded = [];
-
-    protected $fillable = [
-        'name',
-        'photo',
-        'svg',
-    ];
+    protected $guarded = ['id'];
 
     public function svgs()
     {
-        return $this->hasMany(Svg::class, 'svg_id');
+        return $this->hasMany(Svg::class);
     }
 
 }

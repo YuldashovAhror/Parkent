@@ -7,50 +7,19 @@
     <div class="card-header pb-0">
         <h5>Изменить</h5>
     </div>
-    <img style="margin-left: 10rem; width: 300px; height: 300px;" src="{{$new->photo}}" alt="">
+    <img style="margin-left: 10rem; width: 300px; height: 300px;" src="{{$project->photo}}" alt="">
     <div class="card-body">
-        <form action="{{route('dashboard.news.update', $new->id)}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('dashboard.project.update', $project->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             {{ method_field('put') }}
             <div class="row g-4 mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="photo">Фото</label>
-                    <input class="form-control" name="photo" id="photo" type="file" placeholder="..." value="">
+                    <input class="form-control" name="photo" id="photo" type="file" min="2000" max="2099">
                 </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <label class="form-label" for="title_uz">Название Uz</label>
-                    <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" min="2000" max="2099" value="{{$new->title_uz}}">
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label" for="title_ru">Название Ru</label>
-                    <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$new->title_ru}}">
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label" for="title_en">Название En</label>
-                    <div class="input-group">
-                        <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$new->title_ru}}">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <label for="discription_uz" class="form-label">Описание Uz</label>
-                    <div class="form-group">
-                        <textarea class="ckeditor form-control" name="discription_uz" required>{{$new->discription_uz}}</textarea>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="form-label" for="discription_ru">Описание Ru</label>
-                    <textarea class="ckeditor form-control" name="discription_ru" required>{{$new->discription_ru}}</textarea>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label class="form-label" for="discription_en">Описание En</label>
-                    <div class="input-group">
-                        <textarea class="ckeditor form-control" name="discription_en" required>{{$new->discription_en}}</textarea>
-                    </div>
+                <div class="col-md-6 ">
+                    <label class="form-label" for="svg">Фото svg</label>
+                    <input class="form-control" name="svg" id="svg" type="file">
                 </div>
             </div>
             <button class="btn btn-primary" type="submit">Сохранить</button>

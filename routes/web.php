@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['prefix'=>'dashboard'], function (){
-    Route::name('dashboard.')->group(function (){   
+    Route::name('dashboard.')->group(function (){
         Route::resource('/header', HeaderController::class);
         Route::resource('/news', NewsController::class);
         Route::resource('/secondbanner', SecondBannerController::class);
