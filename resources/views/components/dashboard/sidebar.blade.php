@@ -82,6 +82,61 @@
                     </ul>
                     
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Проекты</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.project.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.project.create')}}">Создать</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Здание</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.building.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.building.create')}}">Создать</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Апартаменты</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.apartment.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.apartment.create')}}">Создать</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Строить планы</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.plan.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.plan.create')}}">Создать</a></li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-star"></i>
+                        <span>Комната</span>
+                    </a>
+                    <ul class="sub-menu mm-collapse" aria-expanded="false">
+                        <li><a href="{{route('dashboard.room.index')}}">Лист</a></li>
+                        <li><a href="{{route('dashboard.room.create')}}">Создать</a></li>
+                        
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

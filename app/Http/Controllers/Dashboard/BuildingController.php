@@ -14,7 +14,7 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.building.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class BuildingController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.building.create');
     }
 
     /**

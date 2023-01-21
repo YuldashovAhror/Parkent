@@ -14,7 +14,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.room.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.room.create');
     }
 
     /**

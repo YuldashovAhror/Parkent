@@ -14,7 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.project.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.project.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

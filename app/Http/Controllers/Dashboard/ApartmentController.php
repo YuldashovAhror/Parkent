@@ -14,7 +14,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.apartment.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.apartment.create');
     }
 
     /**
