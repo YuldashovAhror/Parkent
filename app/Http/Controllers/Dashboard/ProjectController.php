@@ -120,7 +120,6 @@ class ProjectController extends BaseController
             if (isset($file->g)) {
                 $file = $file->g->path;
             }
-            if($project->id != 0){
                 foreach ($file as $item => $i) {
                     $created_svg = Svg::find($id);
                     $created_svg->project_id = $project->id;
@@ -130,7 +129,6 @@ class ProjectController extends BaseController
                     $created_svg->save();
                     // $project->svgs()->save($created_svg);
                 }
-            }
         }
 
         return redirect()->route('dashboard.project.index');

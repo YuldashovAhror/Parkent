@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -14,7 +16,10 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return view('dashboard.room.index');
+        $rooms = Room::with('plans')->get();
+        return view('dashboard.room.index', [
+            'rooms'=>$rooms
+        ]);
     }
 
     /**
@@ -35,7 +40,15 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $room = new Room();
+        $room->plan_id = $request->plan;
+        $room->name_uz = $request->name_uz;
+        $room->name_ru = $request->name_ru;
+        $room->name_en = $request->name_en;
+        $room->room_area = $request->room_area;
+        $room->save();
+        return redirect()->route('dashboard.room.index');
     }
 
     /**
@@ -57,7 +70,10 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Room::find($id);
+        return view('dashboard.room.edit', [
+            'room'=>$room
+        ]);
     }
 
     /**
@@ -69,7 +85,14 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $room = Room::find($id);
+        $room->plan_id = $request->plan;
+        $room->name_uz = $request->name_uz;
+        $room->name_ru = $request->name_ru;
+        $room->name_en = $request->name_en;
+        $room->room_area = $request->room_area;
+        $room->save();
+        return redirect()->route('dashboard.room.index');
     }
 
     /**
@@ -80,6 +103,8 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::find($id);
+        $room->delete();
+        return redirect()->back();
     }
 }

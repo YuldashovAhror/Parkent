@@ -5,21 +5,22 @@
 </div>
     <div class="row">
         <div class="col-sm-12">
-        
+
             <div class="card-header">
                 <h5>Список</h5>
             </div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        
+
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Фото</th>
+                            <th scope="col">Строить планы</th>
+                            <th scope="col">Площадь комнаты</th>
                             <th scope="col">Название Uz</th>
                             <th scope="col">Название Ru</th>
                             <th scope="col">Название En</th>
-            
+
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -27,22 +28,23 @@
                     $num = 1;
                     ?>
                     <tbody>
-                        {{-- @foreach ($news as $new)
+                        @foreach ($rooms as $room)
                             <tr>
                                 <th scope="row">{{$num++}}</th>
-                                <td><img src="{{$new->photo}}" alt="" style="width: 100px; height: 100px;"></td>
-                                <td >{{$new->title_uz}}</td>
-                                <td >{{$new->title_ru}}</td>
-                                <td >{{$new->title_en}}</td>
+                                <td >{{$room->plans->area}}</td>
+                                <td >{{$room->room_area}}</td>
+                                <td >{{$room->name_uz}}</td>
+                                <td >{{$room->name_ru}}</td>
+                                <td >{{$room->name_en}}</td>
                                 <td>
-                                    <form action="{{route('dashboard.news.edit', $new->id)}}" method="GET" style="display: inline;">
+                                    <form action="{{route('dashboard.room.edit', $room->id)}}" method="GET" style="display: inline;">
                                         <button class="btn btn-xs btn-primary" type="submit"><i class="bx bx-edit-alt"></i></button>
                                     </form>
                                     <div>
-                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$new->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
+                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$room->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
                                     </div>
                                 </td>
-                                <div class="modal fade" id="exampleModalCenter{{$new->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalCenter{{$room->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -51,7 +53,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal" data-bs-original-title="" title="">Закрывать</button>
-                                            <form action="{{route('dashboard.news.destroy', $new->id)}}" method="post">
+                                            <form action="{{route('dashboard.room.destroy', $room->id)}}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-danger" type="submit"  data-bs-original-title="" title="">Удалить</button>
@@ -61,7 +63,7 @@
                                 </div>
                                 </div>
                             </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

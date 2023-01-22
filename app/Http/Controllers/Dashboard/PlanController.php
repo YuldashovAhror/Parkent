@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
-class PlanController extends Controller
+class PlanController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,10 @@ class PlanController extends Controller
      */
     public function index()
     {
-        return view('dashboard.plan.index');
+        $plans = Plan::with('apartments')->get();
+        return view('dashboard.plan.index', [
+            'plans'=>$plans
+        ]);
     }
 
     /**
@@ -35,7 +39,16 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $plan = new Plan();
+        if($request->file('photo')){
+            $plan['photo'] = $this->photoSave($request->file('photo'), 'image/plan');
+        }
+        $plan->apartment_id = $request->apartment;
+        $plan->area = $request->area;
+        $plan->price = $request->price;
+        $plan->save();
+        return redirect()->route('dashboard.plan.index');
     }
 
     /**
@@ -57,7 +70,10 @@ class PlanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $plan = Plan::find($id);
+        return view('dashboard.plan.edit', [
+            'plan'=>$plan
+        ]);
     }
 
     /**
@@ -69,7 +85,18 @@ class PlanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $plan = Plan::find($id);
+        if($request->file('photo')){
+            if(is_file(public_path($plan->photo))){
+                unlink(public_path($plan->photo));
+            }
+            $plan['photo'] = $this->photoSave($request->file('photo'), 'image/plan');
+        }
+        $plan->apartment_id = $request->apartment;
+        $plan->area = $request->area;
+        $plan->price = $request->price;
+        $plan->save();
+        return redirect()->route('dashboard.plan.index');
     }
 
     /**
@@ -80,6 +107,11 @@ class PlanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plan = Plan::find($id);
+        if(is_file(public_path($plan->photo))){
+            unlink(public_path($plan->photo));
+        }
+        $plan->delete();
+        return redirect()->back();
     }
 }

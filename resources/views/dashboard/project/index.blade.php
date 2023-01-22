@@ -12,7 +12,6 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Фото</th>
@@ -24,20 +23,17 @@
                     $num = 1;
                     ?>
                     <tbody>
+                        {{-- @dd($projects) --}}
                         @foreach ($projects as $project)
                             <tr>
                                 <th scope="row">{{ $num++ }}</th>
                                 <td>
-                                    <img src="{{ $project->photo }}" alt="" style="width: 100px; height: 100px;">
-                                </td>
-                                <td>
                                     @if (isset($project))
-                                        <svg width="100px" height="100px" viewBox="{{ $project->svgs[0]['viewBox'] }}"
-                                            fill="none" xmlns="http://www.w3.org/2000/svg"
-                                            style="position: absolute; z-index: 2; left: 0; top: 0;">
+                                        <img src="{{ $project->photo }}" alt="" style="width: 100px; height: 100px;">
+                                        <svg width="100px" height="100px" viewBox="{{$project->svgs[0]['viewBox']}}"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             @foreach ($project->svgs as $svg)
-                                                <path data-number="1" d="{{ $svg['svg'] }}" fill="#167667"
-                                                    fill-opacity="0.6" />
+                                                <path data-number="1" d="{{ $svg['svg'] }}" fill="#167667" fill-opacity="0.6" />
                                             @endforeach
                                         </svg>
                                     @endif
