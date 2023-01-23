@@ -7,7 +7,7 @@
     <div class="card-header pb-0">
         <h5>Изменить</h5>
     </div>
-    <img style="margin-left: 10rem; width: 300px; height: 300px;" src="{{$project->photo}}" alt="">
+    <img  src="{{$project->photo}}" alt="">
     <div class="card-body">
         <form action="{{route('dashboard.project.update', $project->id)}}" method="POST" enctype="multipart/form-data">
             @csrf

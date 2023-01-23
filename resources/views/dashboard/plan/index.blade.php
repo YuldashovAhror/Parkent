@@ -19,6 +19,7 @@
                             <th scope="col">Квартира Название</th>
                             <th scope="col">Площадь:</th>
                             <th scope="col">Цена:</th>
+                            <th scope="col">Комната</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -31,9 +32,10 @@
                             <tr>
                                 <th scope="row">{{$num++}}</th>
                                 <td><img src="{{$plan->photo}}" alt="" style="width: 100px; height: 100px;"></td>
-                                <td >{{$plan->apartments->room_number}}</td>
+                                <td >{{$plan->buildings->name_ru}}</td>
                                 <td >{{$plan->area}}</td>
                                 <td >{{$plan->price}}</td>
+                                <td >{{$plan->room}}</td>
                                 <td>
                                     <form action="{{route('dashboard.plan.edit', $plan->id)}}" method="GET" style="display: inline;">
                                         <button class="btn btn-xs btn-primary" type="submit"><i class="bx bx-edit-alt"></i></button>

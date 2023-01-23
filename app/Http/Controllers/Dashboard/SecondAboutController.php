@@ -44,7 +44,7 @@ class SecondAboutController extends BaseController
             'text_ru' => 'required|string|max:255',
             'text_en' => 'required|string|max:255',
         ]);
-        
+
         $secondabout = new SecondAbout();
         if($request->file('photo')){
             $secondabout['photo'] = $this->photoSave($request->file('photo'), 'image/secondabout');
@@ -52,6 +52,7 @@ class SecondAboutController extends BaseController
         $secondabout->text_uz = $request->text_uz;
         $secondabout->text_ru = $request->text_ru;
         $secondabout->text_en = $request->text_en;
+        $secondabout->size = $request->size;
         $secondabout->save();
         return redirect()->route('dashboard.secondabout.index');
     }
@@ -100,6 +101,7 @@ class SecondAboutController extends BaseController
         $secondabout->text_uz = $request->text_uz;
         $secondabout->text_ru = $request->text_ru;
         $secondabout->text_en = $request->text_en;
+        $secondabout->size = $request->size;
         $secondabout->save();
         return redirect()->route('dashboard.secondabout.index');
     }

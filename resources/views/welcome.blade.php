@@ -86,20 +86,22 @@
             <div class="general__container">
                 <div class="about">
                     <div class="about__content">
-                        <h2 class="about__title general-B" data-aos="fade-right">О ЖК Parkent Gardens</h2>
+                        <h2 class="about__title general-B" data-aos="fade-right">{{$abouts->title_uz}}</h2>
                         <!-- /.about__title -->
-                        <div class="about__subtitle general-R" data-aos="fade-right">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                        <div class="about__subtitle general-R" data-aos="fade-right">{!!$abouts->discription_uz!!}</div>
                         <!-- /.about__subtitle -->
                         <div class="about__container">
+                            @foreach ($secondabouts as $secondabout)
                             <div class="about__box" data-aos="fade-up" data-aos-delay="100">
-                                <img src="/img/icons/a-1.svg" alt="">
-                                <span class="info general-B">3.5</span>
+                                <img src="{{$secondabout->photo}}" alt="">
+                                <span class="info general-B">{{$secondabout->size}}</span>
                                 <!-- /.info -->
-                                <p class="names general-R">Высота потолков</p>
+                                <p class="names general-R">{{$secondabout->text_uz}}</p>
                                 <!-- /.names -->
                             </div>
+                            @endforeach
                             <!-- /.about__box -->
-                            <div class="about__box" data-aos="fade-up" data-aos-delay="200">
+                            {{-- <div class="about__box" data-aos="fade-up" data-aos-delay="200">
                                 <img src="/img/icons/a-2.svg" alt="">
                                 <span class="info general-B">45 - 110  м2</span>
                                 <!-- /.info -->
@@ -153,7 +155,7 @@
                                 <!-- /.info -->
                                 <p class="names general-R">Высота потолков</p>
                                 <!-- /.names -->
-                            </div>
+                            </div> --}}
                             <!-- /.about__box -->
                         </div>
                         <!-- /.about__container -->

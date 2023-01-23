@@ -24,7 +24,7 @@ class Plan extends Model
 
     public function atributeplans()
     {
-        return $this->hasMany(AttributePlan::class);
+        return $this->belongstoMany(AttributePlan::class);
     }
 
 }

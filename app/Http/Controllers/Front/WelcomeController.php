@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use App\Models\Banner;
 use App\Models\Header;
 use App\Models\News;
+use App\Models\SecondAbout;
 use App\Models\SecondBanner;
 use Illuminate\Http\Request;
 
@@ -22,11 +24,15 @@ class WelcomeController extends Controller
         $news = News::all();
         $secondbanner = SecondBanner::all();
         $banners = Banner::all();
+        $secondabouts = SecondAbout::all();
+        $abouts = About::find(1);
         return view('welcome', [
             'header'=>$header,
             'news'=>$news,
             'secondbanner'=>$secondbanner,
             'banners'=>$banners,
+            'abouts'=>$abouts,
+            'secondabouts'=>$secondabouts,
         ]);
     }
 

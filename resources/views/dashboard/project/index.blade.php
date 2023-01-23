@@ -1,5 +1,98 @@
 @extends('layouts.dashboard.main')
 @section('content')
+<style>
+    .map {
+        height: 1050px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .map img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 3;
+        width: 100%;
+        height: auto;
+        -webkit-transition: .3s all;
+        transition: .3s all;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .map svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 3;
+        width: 100%;
+        height: auto;
+        -webkit-transition: .3s all;
+        transition: .3s all;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .map svg path {
+        opacity: 0.5;
+        fill: blue;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .map path:hover {
+        opacity: 0.8;
+        transition: 0.3s;
+    }
+
+    .map path[checked=checked] {
+        opacity: 0.8;
+        transition: 0.3s;
+        fill: red;
+    }
+
+    .map polygon {
+        opacity: 0.5;
+        fill: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .map polygon:hover {
+        opacity: 0.8;
+        transition: 0.3s;
+    }
+
+    .map polygon[checked=checked] {
+        opacity: 0.8;
+        transition: 0.3s;
+        fill: red;
+    }
+
+    .map img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 100%;
+        height: auto;
+    }
+
+    .map input[type=radio] {
+        visibility: visible;
+    }
+
+    [data-selected=true] {
+        fill: red;
+    }
+
+    [data-selected=false] {
+        fill: olive;
+        opacity: .5;
+    }
+</style>
     <div class="col-sm-6" style="padding-top: 2rem; padding-bottom: 1.5rem">
         <h3>События и семинары</h3>
     </div>
@@ -23,7 +116,6 @@
                     $num = 1;
                     ?>
                     <tbody>
-                        {{-- @dd($projects) --}}
                         @foreach ($projects as $project)
                             <tr>
                                 <th scope="row">{{ $num++ }}</th>

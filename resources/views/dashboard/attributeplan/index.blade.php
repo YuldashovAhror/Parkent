@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.main')
 @section('content')
 <div class="col-sm-6" style="padding-top: 2rem; padding-bottom: 1.5rem">
-    <h3>О данных</h3>
+    <h3>События и семинары</h3>
 </div>
     <div class="row">
         <div class="col-sm-12">
@@ -15,11 +15,10 @@
 
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Фото</th>
                             <th scope="col">Название Uz</th>
                             <th scope="col">Название Ru</th>
                             <th scope="col">Название En</th>
-                            <th>Размер</th>
+
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -27,23 +26,21 @@
                     $num = 1;
                     ?>
                     <tbody>
-                        @foreach ($secondabouts as $secondabout)
+                        {{-- @foreach ($attributes as $attribute)
                             <tr>
                                 <th scope="row">{{$num++}}</th>
-                                <td><img src="{{$secondabout->photo}}" alt="" style="width: 100px; height: 100px;"></td>
-                                <td >{{$secondabout->text_uz}}</td>
-                                <td >{{$secondabout->text_ru}}</td>
-                                <td >{{$secondabout->text_en}}</td>
-                                <td >{{$secondabout->size}}</td>
+                                <td >{{$attribute->name_uz}}</td>
+                                <td >{{$attribute->name_ru}}</td>
+                                <td >{{$attribute->name_en}}</td>
                                 <td>
-                                    <form action="{{route('dashboard.secondabout.edit', $secondabout->id)}}" method="GET" style="display: inline;">
+                                    <form action="{{route('dashboard.attribute.edit', $attribute->id)}}" method="GET" style="display: inline;">
                                         <button class="btn btn-xs btn-primary" type="submit"><i class="bx bx-edit-alt"></i></button>
                                     </form>
                                     <div>
-                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$secondabout->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
+                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$attribute->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
                                     </div>
                                 </td>
-                                <div class="modal fade" id="exampleModalCenter{{$secondabout->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalCenter{{$attribute->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -52,7 +49,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal" data-bs-original-title="" title="">Закрывать</button>
-                                            <form action="{{route('dashboard.secondabout.destroy', $secondabout->id)}}" method="post">
+                                            <form action="{{route('dashboard.attribute.destroy', $attribute->id)}}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-danger" type="submit"  data-bs-original-title="" title="">Удалить</button>
@@ -62,7 +59,7 @@
                                 </div>
                                 </div>
                             </tr>
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
             </div>

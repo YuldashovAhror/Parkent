@@ -11,19 +11,23 @@
         <form action="{{route('dashboard.plan.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row g-4 mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="photo">Фото</label>
-                    <input class="form-control" name="photo" id="photo" type="file" placeholder="..." required="" min="2000" max="2099" value="">
+                    <input class="form-control" name="photo" id="photo" type="file" placeholder="..." required="" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" >Квартира статуса</label>
+                    <select name="apartment" class="form-control"  required="">
+                        @foreach (App\Models\Building::all() as $status)
+                            <option value="{{ $status->id }}">{{ $status->name_ru}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4 mb-3">
-                    <label class="form-label" >Квартира статуса</label>
-                    <select name="apartment" class="form-control"  required="">
-                        @foreach (App\Models\Apartment::all() as $status)
-                            <option value="{{ $status->id }}">{{ $status->room_number}}</option>
-                        @endforeach
-                    </select>
+                <div class="col-md-4">
+                    <label class="form-label" for="room">Комната</label>
+                    <input class="form-control" name="room" id="room" type="text" placeholder="..." required="" value="">
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="area">Площадь:</label>

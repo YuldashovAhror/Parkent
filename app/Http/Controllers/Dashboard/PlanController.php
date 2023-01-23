@@ -15,7 +15,7 @@ class PlanController extends BaseController
      */
     public function index()
     {
-        $plans = Plan::with('apartments')->get();
+        $plans = Plan::with('buildings')->get();
         return view('dashboard.plan.index', [
             'plans'=>$plans
         ]);
@@ -44,8 +44,9 @@ class PlanController extends BaseController
         if($request->file('photo')){
             $plan['photo'] = $this->photoSave($request->file('photo'), 'image/plan');
         }
-        $plan->apartment_id = $request->apartment;
+        $plan->building_id = $request->apartment;
         $plan->area = $request->area;
+        $plan->room = $request->room;
         $plan->price = $request->price;
         $plan->save();
         return redirect()->route('dashboard.plan.index');
@@ -92,8 +93,9 @@ class PlanController extends BaseController
             }
             $plan['photo'] = $this->photoSave($request->file('photo'), 'image/plan');
         }
-        $plan->apartment_id = $request->apartment;
+        $plan->building_id = $request->apartment;
         $plan->area = $request->area;
+        $plan->room = $request->room;
         $plan->price = $request->price;
         $plan->save();
         return redirect()->route('dashboard.plan.index');

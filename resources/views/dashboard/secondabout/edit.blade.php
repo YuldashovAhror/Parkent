@@ -13,9 +13,13 @@
             @csrf
             {{ method_field('put') }}
             <div class="row g-4 mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="photo">Фото</label>
                     <input class="form-control" name="photo" id="photo" type="file" placeholder="..." value="">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="size">Размер </label>
+                    <input class="form-control" name="size" id="size" type="text" placeholder="..." required="" min="2000" max="2099" value="{{$secondabout->size}}">
                 </div>
             </div>
             <div class="row g-4">

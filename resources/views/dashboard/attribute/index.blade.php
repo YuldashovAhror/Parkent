@@ -15,7 +15,6 @@
 
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Фото</th>
                             <th scope="col">Название Uz</th>
                             <th scope="col">Название Ru</th>
                             <th scope="col">Название En</th>
@@ -27,22 +26,21 @@
                     $num = 1;
                     ?>
                     <tbody>
-                        {{-- @foreach ($news as $new)
+                        @foreach ($attributes as $attribute)
                             <tr>
                                 <th scope="row">{{$num++}}</th>
-                                <td><img src="{{$new->photo}}" alt="" style="width: 100px; height: 100px;"></td>
-                                <td >{{$new->title_uz}}</td>
-                                <td >{{$new->title_ru}}</td>
-                                <td >{{$new->title_en}}</td>
+                                <td >{{$attribute->name_uz}}</td>
+                                <td >{{$attribute->name_ru}}</td>
+                                <td >{{$attribute->name_en}}</td>
                                 <td>
-                                    <form action="{{route('dashboard.news.edit', $new->id)}}" method="GET" style="display: inline;">
+                                    <form action="{{route('dashboard.attribute.edit', $attribute->id)}}" method="GET" style="display: inline;">
                                         <button class="btn btn-xs btn-primary" type="submit"><i class="bx bx-edit-alt"></i></button>
                                     </form>
                                     <div>
-                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$new->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
+                                        <button class="btn btn-xs btn-danger mt-1" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{$attribute->id}}" data-bs-original-title="" title=""><i class="uil-trash"></i></button>
                                     </div>
                                 </td>
-                                <div class="modal fade" id="exampleModalCenter{{$new->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalCenter{{$attribute->id}}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -51,7 +49,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button class="btn btn-secondary" type="button" data-bs-dismiss="modal" data-bs-original-title="" title="">Закрывать</button>
-                                            <form action="{{route('dashboard.news.destroy', $new->id)}}" method="post">
+                                            <form action="{{route('dashboard.attribute.destroy', $attribute->id)}}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-danger" type="submit"  data-bs-original-title="" title="">Удалить</button>
@@ -61,7 +59,7 @@
                                 </div>
                                 </div>
                             </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

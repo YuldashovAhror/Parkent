@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Attribute;
 use Illuminate\Http\Request;
 
 class AttributeController extends Controller
@@ -14,7 +15,10 @@ class AttributeController extends Controller
      */
     public function index()
     {
-        
+        $attributes = Attribute::all();
+        return view('dashboard.attribute.index', [
+            'attributes'=>$attributes
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class AttributeController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.attribute.create');
     }
 
     /**
@@ -35,7 +39,12 @@ class AttributeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attribute = new Attribute();
+        $attribute->name_uz = $request->name_uz;
+        $attribute->name_ru = $request->name_ru;
+        $attribute->name_en = $request->name_en;
+        $attribute->save();
+        return redirect()->route('dashboard.attribute.index');
     }
 
     /**
@@ -57,7 +66,10 @@ class AttributeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $attribute = Attribute::find($id);
+        return view('dashboard.attribute.edit', [
+            'attribute'=>$attribute
+        ]);
     }
 
     /**
@@ -69,7 +81,12 @@ class AttributeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $attribute = Attribute::find($id);
+        $attribute->name_uz = $request->name_uz;
+        $attribute->name_ru = $request->name_ru;
+        $attribute->name_en = $request->name_en;
+        $attribute->save();
+        return redirect()->route('dashboard.attribute.index');
     }
 
     /**
@@ -80,6 +97,8 @@ class AttributeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $attribute = Attribute::find($id);
+        $attribute->delete();
+        return redirect()->back();
     }
 }

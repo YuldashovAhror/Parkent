@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\AttributePlan;
 use Illuminate\Http\Request;
 
 class AttributePlanController extends Controller
@@ -14,7 +15,10 @@ class AttributePlanController extends Controller
      */
     public function index()
     {
-        //
+        $attributeplans = AttributePlan::with('plans')->get();
+        return view('dashboard.attributeplan.index', [
+            'attributeplans'=>$attributeplans
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class AttributePlanController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.attributeplan.create');
     }
 
     /**
@@ -35,7 +39,15 @@ class AttributePlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->attributes);
+        $attributeplan = new AttributePlan();
+        $attributeplan->plan_id = $request->plan;
+        $attributeplan->atribute_id = $request->attributes;
+        $attributeplan->size = $request->size;
+        dd($attributeplan);
+        $attributeplan->save();
+
+        return redirect()->route('dashboard.attributeplan.index');
     }
 
     /**
