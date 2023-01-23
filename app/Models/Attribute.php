@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Attribute extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'plan_id',
         'name_uz',
         'name_ru',
         'name_en',
-        'room_area',
     ];
 
-    public function plans()
+    public function atributeplans()
     {
-        return $this->belongsTo(Plan::class, 'plan_id');
+        return $this->hasMany(AttributePlan::class);
     }
 }

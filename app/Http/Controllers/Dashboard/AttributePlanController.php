@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Apartment;
 use Illuminate\Http\Request;
 
-class ApartmentController extends Controller
+class AttributePlanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartment = Apartment::with('buildings')->get();
-        return view('dashboard.apartment.index',[
-            'apartment'=>$apartment
-        ]);
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('dashboard.apartment.create');
+        //
     }
 
     /**
@@ -39,12 +35,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $apartment = new Apartment();
-        $apartment->building_id = $request->building;
-        $apartment->room_number = $request->room_number;
-        $apartment->save();
-        return redirect()->route('dashboard.apartment.index');
+        //
     }
 
     /**
@@ -66,10 +57,7 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        $apartment = Apartment::find($id);
-        return view('dashboard.apartment.edit', [
-            'apartment'=>$apartment
-        ]);
+        //
     }
 
     /**
@@ -81,11 +69,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $apartment = Apartment::find($id);
-        $apartment->building_id = $request->building;
-        $apartment->room_number = $request->room_number;
-        $apartment->save();
-        return redirect()->route('dashboard.apartment.index');
+        //
     }
 
     /**
@@ -96,8 +80,6 @@ class ApartmentController extends Controller
      */
     public function destroy($id)
     {
-        $apartment = Apartment::find($id);
-        $apartment->delete();
-        return redirect()->back();
+        //
     }
 }

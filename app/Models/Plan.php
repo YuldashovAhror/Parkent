@@ -10,20 +10,21 @@ class Plan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'apartment_id',
+        'building_id',
         'photo',
         'area',
+        'room',
         'price',
     ];
 
-    public function apartments()
+    public function buildings()
     {
-        return $this->belongsTo(Apartment::class, 'apartment_id');
+        return $this->belongsTo(Building::class, 'building_id');
     }
 
-    public function rooms()
+    public function atributeplans()
     {
-        return $this->hasMany(Room::class, 'plan_id');
+        return $this->hasMany(AttributePlan::class);
     }
 
 }

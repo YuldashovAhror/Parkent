@@ -16,9 +16,9 @@ class Building extends Model
         'name_en',
     ];
 
-    public function apartments()
+    public function plans()
     {
-        return $this->hasMany(Apartment::class, 'building_id');
+        return $this->hasMany(Plan::class, 'building_id');
     }
 
     public function svgs()

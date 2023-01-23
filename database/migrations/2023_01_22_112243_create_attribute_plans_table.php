@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('apartments', function (Blueprint $table) {
+        Schema::create('attribute_plans', function (Blueprint $table) {
             $table->id();
-            $table->integer('building_id');
-            $table->string('room_number');
+            $table->integer('plan_id');
+            $table->integer('atribute_id');
+            $table->string('size');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartments');
+        Schema::dropIfExists('attribute_plans');
     }
 };

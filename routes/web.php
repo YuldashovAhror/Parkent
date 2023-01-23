@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\ApartmentController;
+use App\Http\Controllers\Dashboard\AttributeController;
+use App\Http\Controllers\Dashboard\AttributePlanController;
 use App\Http\Controllers\Dashboard\BannerController;
 use App\Http\Controllers\Dashboard\BuildingController;
 use App\Http\Controllers\Dashboard\HeaderController;
@@ -39,9 +41,9 @@ Route::group(['prefix'=>'dashboard'], function (){
         Route::resource('/banner', BannerController::class);
         Route::resource('/project', ProjectController::class);
         Route::resource('/building', BuildingController::class);
-        Route::resource('/apartment', ApartmentController::class);
         Route::resource('/plan', PlanController::class);
-        Route::resource('/room', RoomController::class);
+        Route::resource('/attribute', AttributeController::class);
+        Route::resource('/attributeplan', AttributePlanController::class);
 
     });
 });
