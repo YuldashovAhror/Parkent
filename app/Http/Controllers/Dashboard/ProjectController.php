@@ -13,9 +13,9 @@ class ProjectController extends BaseController
 {
     public function index()
     {
-        $projects = Project::with('svgs')->get();
+        $project = Project::first();
         return view('dashboard.project.index', [
-            'projects' => $projects,
+            'project' => $project,
         ]);
     }
 
@@ -56,16 +56,10 @@ class ProjectController extends BaseController
             $created_svg->name = 'image/project/svg/' . $svg_name . '.svg';
             $created_svg->cordinates = $i['d'];
             $created_svg->save();
-            // $project->svgs()->save($created_svg);
         }
         DB::commit();
 
-        return view('dashboard.project.index');
-    }
-
-    public function show($id)
-    {
-        //
+        return redirect()->route('dashboard.project.index');
     }
 
     public function edit($id)

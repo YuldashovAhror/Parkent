@@ -125,16 +125,6 @@
                         <li><a href="{{route('dashboard.attribute.create')}}">Создать</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-star"></i>
-                        <span>АтрибутПлан</span>
-                    </a>
-                    <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="{{route('dashboard.attributeplan.index')}}">Лист</a></li>
-                        <li><a href="{{route('dashboard.attributeplan.create')}}">Создать</a></li>
-                    </ul>
-                </li>
             </ul>
         </div>
         <!-- Sidebar -->

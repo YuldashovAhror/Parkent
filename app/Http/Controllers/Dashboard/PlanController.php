@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Models\AttributePlan;
 use App\Models\Plan;
 use Illuminate\Http\Request;
 
@@ -39,7 +39,6 @@ class PlanController extends BaseController
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $plan = new Plan();
         if($request->file('photo')){
             $plan['photo'] = $this->photoSave($request->file('photo'), 'image/plan');
@@ -49,6 +48,16 @@ class PlanController extends BaseController
         $plan->room = $request->room;
         $plan->price = $request->price;
         $plan->save();
+
+        // TODO: Request dan arrtibutes ($request->attributes) kelishi kerak, array holatda. ex: [1, 4, 7].
+        foreach($request->attributes as $attribute) {
+            $plan_attribute = new AttributePlan();
+            $plan_attribute->plan_id = $plan->id;
+            $plan_attribute->attribute_id = $request->attribute;
+            $plan_attribute->size = $request->size;
+            $plan_attribute->save();
+        }
+
         return redirect()->route('dashboard.plan.index');
     }
 

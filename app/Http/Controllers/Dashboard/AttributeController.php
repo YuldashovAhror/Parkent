@@ -44,6 +44,7 @@ class AttributeController extends Controller
         $attribute->name_ru = $request->name_ru;
         $attribute->name_en = $request->name_en;
         $attribute->save();
+        
         return redirect()->route('dashboard.attribute.index');
     }
 

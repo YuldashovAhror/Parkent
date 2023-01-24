@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('project_id');
             $table->text('cordinates');
             $table->text('viewBox');
+            $table->string('name');
             $table->timestamps();
         });
     }

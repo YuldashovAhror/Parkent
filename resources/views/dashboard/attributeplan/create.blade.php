@@ -8,12 +8,12 @@
         <h5>Добавить</h5>
     </div>
     <div class="card-body">
-        <form action="{{route('dashboard.attributeplan.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('dashboard.attributeplan.store')}}" method="POST">
             @csrf
             <div class="row g-4 mb-3">
                 <div class="col-md-4 mb-3">
                     <label class="form-label" >Квартира статуса</label>
-                    <select name="plan" class="form-control"  required="">
+                    <select name="plan_id" class="form-control"  required="">
                         @foreach (App\Models\Plan::all() as $status)
                             <option value="{{ $status->id }}">{{ $status->room}}</option>
                         @endforeach
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                     <label class="form-label" >Квартира статуса</label>
-                    <select name="attributes" class="form-control"  required="">
+                    <select name="atribute_id" class="form-control"  required="">
                         @foreach (App\Models\Attribute::all() as $status)
                             <option value="{{ $status->id }}">{{ $status->name_ru}}</option>
                         @endforeach

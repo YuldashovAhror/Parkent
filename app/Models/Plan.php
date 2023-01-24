@@ -27,4 +27,9 @@ class Plan extends Model
         return $this->belongstoMany(AttributePlan::class);
     }
 
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'attribute_plans');
+    }
+
 }

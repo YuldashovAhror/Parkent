@@ -15,8 +15,8 @@ class Attribute extends Model
         'name_en',
     ];
 
-    public function atributeplans()
+    public function plans()
     {
-        return $this->belongstoMany(AttributePlan::class);
+        return $this->belongsToMany(Plan::class, 'attribute_plans');
     }
 }
